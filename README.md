@@ -1,11 +1,11 @@
-HealthConnect Experience Lab Week 6: Advanced Analytics & Decision Support Report
+## HealthConnect Experience Lab Week 6: Advanced Analytics & Decision Support Report
 
-Introduction
+## Introduction
 
 This report builds on the Week 5 foundation, where data cleaning, exploratory data analysis (EDA), KPI development, and an initial dashboard were completed across the HealthConnect Experience Lab dataset (5,000 appointment records). Rather than repeating that work, Week 6 focuses on deepening and validating the most business-relevant findings from Week 5, investigating relationships between key variables and appointment outcomes, and translating those findings into actionable recommendations for HealthConnect management.
 
 
-Summary of Week 5 Findings
+## Summary of Week 5 Findings
 
 Total Appointments: 5,000
 Attendance Rate: 46.28%
@@ -18,7 +18,7 @@ Attendance appears broadly similar across gender groups.
 Reminder channel and whether a reminder was sent both showed a visible relationship with attendance.
 
 
-Selected Findings for Deeper Investigation
+## Selected Findings for Deeper Investigation
 
 Three findings were selected for deeper investigation based on their potential business impact and actionability:
 Booking lead time and its relationship with appointment outcome,
@@ -27,7 +27,7 @@ Patient appointment history (previous appointments and previous no-shows) and it
 These were prioritized because, unlike demographic factors (gender, age), they represent operational levers HealthConnect can realistically act on — through scheduling policy, patient support, and risk-based reminder targeting.
 
 
-Deeper Analysis
+## Deeper Analysis
 
 1. Booking Lead Time vs. Appointment Outcome
 The Booking_Lead_Days (bins) by Appointment_Outcome chart shows a clear pattern: at low lead-time bins (booked close to the appointment date), attendance is high and no-shows are comparatively low (534 attended vs. 237 no-show at the shortest lead time bin). However, as booking lead time increases, the relationship reverses — at higher lead-time bins, no-shows overtake attendance (e.g. 203 attended vs. 509 no-show; 264 attended vs. a much larger no-show count at the highest bins shown). This indicates that appointments booked far in advance are considerably more likely to end in a no-show than appointments booked close to the visit date. This suggests that patients who book long in advance may forget, deprioritize, or have circumstances change before the appointment date arrives.
@@ -65,20 +65,13 @@ Previous No-Shows: Patients with 0 previous no-shows still show a near-even atte
 Reminder Channel Vs Appointment Outcome
 The first visual show equal count of attendance and no-shows however, there was recorded number of no-shows when reminders were not sent. SMS shows the highest number of attendance which was closely followed by Email. The highest no-show rate was observed when no reminder was sent. (51.39%) and followed by Whatsapp(49.77%). This indicates that SMS yielded the highest attendance. This is probably because it can be received with data internet service unlike Email or Whatsapp.
 
-
-
-p 
-
-
-
-
  
-KPI Validation
+## KPI Validation
 The core KPIs (Total Appointments, Attendance Rate, Cancellation Rate, No-Show Rate, Average Booking Lead Time, Average Distance to Clinic) were reviewed against the underlying fact table and confirmed to be calculating correctly, using DIVIDE-based DAX measures with appropriate handling of the Appointment_Outcome categories. The KPIs remain meaningful indicators of overall dashboard health.
 
 
 
-Business Impact Ranking
+## Business Impact Ranking
 Based on the depth and actionability of the findings above, the factors most strongly associated with no-shows and cancellations, ranked by business impact are:
 
 Booking lead time which shows the clearest and most actionable pattern; directly informs scheduling and reminder policy.
@@ -91,7 +84,7 @@ Reminder channel / reminder sent: while not one of the original seven questions,
 
 
 
-Recommendations
+## Recommendations
 Based on the findings above, the following recommendations are proposed to HealthConnect management:
 
 Introduce targeted reminders for long-lead-time bookings. Since attendance drops as booking lead time increases, patients who book far in advance should receive additional reminder touch points (e.g. a reminder shortly after booking, in addition to the standard pre-appointment reminder).
@@ -108,7 +101,7 @@ Cross-Track Contribution (Data Science Track)
 The findings on booking lead time, distance to clinic, and previous no-show history could serve as useful predictive features for a no-show/cancellation risk model. In particular, booking lead time showed the strongest and most consistent relationship with appointment outcome and is recommended as a priority feature for any future predictive modelling work on this dataset.
 
 
-Data Limitations
+## Data Limitations
 The dataset is synthetic, so patterns identified may not fully reflect real-world patient behavior. 
 
 The dataset does not include reasons for cancellation or no-show, limiting the ability to explain why the observed patterns occur.
@@ -118,6 +111,6 @@ Sample sizes become small at the extremes of some variables (e.g. very long dist
 No patient satisfaction or qualitative feedback data was available to contextualize the quantitative patterns found.
 
 
-Conclusion
+## Conclusion
 This Week 6 analysis deepened three key findings from the Week 5 dashboard: booking lead time, distance to clinic, and patient appointment history and validated that booking lead time is the strongest, most actionable driver of no-shows and cancellations in the dataset. These findings support concrete recommendations around reminder targeting, scheduling policy, and patient support for distant patients, while also flagging useful features for future predictive modelling work.
 
